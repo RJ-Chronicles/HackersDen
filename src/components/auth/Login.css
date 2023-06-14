@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+.maindiv {
+  background-image: url("https://images.pexels.com/photos/4546132/pexels-photo-4546132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-size: fill; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  margin: -20px 0 50px;
+} 
+
