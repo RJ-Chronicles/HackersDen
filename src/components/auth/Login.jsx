@@ -13,8 +13,11 @@ import ReactDOM from "react-dom";
 import * as Components from "./components.js";
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
 import {  createUserWithEmailAndPassword  } from 'firebase/auth';
+import {  sendPasswordResetEmail } from "firebase/auth";
 import { auth } from '../../firebase-config';
 import { NavLink, useNavigate } from 'react-router-dom'
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 const Login = () => {
   const [signIn, toggle] = React.useState(true);
@@ -23,6 +26,7 @@ const Login = () => {
     name: "",
     email: "",
     password: "",
+    forgetemail: "",
   })
   const usersCollectionRef = collection(db, "users");
   const createUser = async (newName,NewEmail) => {
@@ -59,7 +63,7 @@ const Login = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault()
-    await createUser(user.name,user.email)
+    await createUser(user.name,user.email);
     await createUserWithEmailAndPassword(auth, user.email, user.password)
       .then((userCredential) => {
           // Signed in
@@ -77,6 +81,11 @@ const Login = () => {
       });
   }
 
+  const onForgetPassword = async (e) => {
+    await sendPasswordResetEmail(auth, user.forgetemail);
+    console.log("Password reset email sent")
+    alert('please check your mail');
+  }
     // const [NewName, setNewName] = useState("")
     // const [NewEmail, setNewEmail] = useState("")
     // const [NewPassword, setNewPassword] = useState("")
@@ -100,7 +109,17 @@ const Login = () => {
           <Components.Title>Sign in</Components.Title>
           <Components.Input name="email" type="email" placeholder="Email" value={user.email}  onChange={getUserData} />
           <Components.Input name="password" type="password" placeholder="Password" value={user.password}  onChange={getUserData} />
-          <Components.Anchor href="#">Forgot your password?</Components.Anchor>
+          
+          <Components.Anchor >
+            <Popup trigger=
+                {<button> Forget Password </button>}
+                position="right center">
+                <div>
+                <Components.Input name="forgetemail" type="email" placeholder="Email" value={user.forgetemail}  onChange={getUserData} />
+                </div>
+                <button onClick={onForgetPassword}>Click here</button>
+            </Popup>
+           </Components.Anchor>
           <Components.Button onClick={onLogin}>Sign In</Components.Button>
         </Components.Form>
       </Components.SignInContainer>
