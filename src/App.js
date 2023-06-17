@@ -11,13 +11,14 @@ import {
 } from "firebase/firestore";
 import Login from "./components/auth/Login";
 import Homepage from "./components/Homepage";
+import DoctorDashboard from "./components/Dashboards/DoctorDashboard";
+import PatientDashboard from "./components/Dashboards/PatientDashboard";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [newName, setNewName] = useState("");
   const [newAge, setNewAge] = useState(0);
-
   const [users, setUsers] = useState([]);
   const usersCollectionRef = collection(db, "users");
 
@@ -38,6 +39,7 @@ function App() {
 
   const getUsers = async () => {
     const data = await getDocs(usersCollectionRef);
+
     setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
@@ -48,12 +50,11 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />} />
-         
-        
-   
+          <Route path="/PatientDashboard" element={<PatientDashboard />} />
+          <Route path="/DoctorDashboard" element={<DoctorDashboard />} />
+
     </Routes>
   </BrowserRouter>
   );

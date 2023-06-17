@@ -79,6 +79,11 @@ export const Title = styled.h1`
   margin: 0;
 `;
 
+export const Error = styled.h4`
+  font-weight: bold;
+  color:red;
+  margin: 0;
+`;
 export const Input = styled.input`
   background-color: #eee;
   border: none;
