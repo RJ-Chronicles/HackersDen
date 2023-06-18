@@ -1,8 +1,18 @@
 import React from 'react'
+import {
+  Container,
+} from "react-bootstrap";
+import DailyData from './Patient/DailyData';
+import GraphData from './Patient/GraphData';
 
 const PatientDashboard = () => {
   return (
-    <div>PatientDashboard</div>
+    <div className='content'>
+      <Container fluid>
+          <DailyData />
+          <GraphData />
+      </Container>
+    </div>
   )
 }
 
