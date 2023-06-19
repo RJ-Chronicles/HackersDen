@@ -29,6 +29,9 @@ const Homepage = () => {
                                 <li className="nav-item">
                                     <a className="nav-link" href="Doctor.html">Doctors</a>
                                 </li>
+                                <li className="nav-item">
+                                    <Link className="btn_2 d-none d-lg-block" to="/PatientDashboard">DashBoard</Link>
+                                </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

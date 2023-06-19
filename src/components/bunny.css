@@ -2147,6 +2147,15 @@
      background-size: 100% 100%;
      background-position: center;
 }
+.banner_part_dashboard {
+    background-image: linear-gradient(70deg, white 55% , lightblue);
+}
+.banner_part_dashboard1 {
+    background-image: linear-gradient(120deg, white 55% , lightblue);
+}
+.banner_part_dashboard2 {
+    background-image: linear-gradient(60deg, white 55% , lightblue);
+}
  @media (max-width: 991px) {
     /* line 2, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_banner.scss */
      .banner_part {
