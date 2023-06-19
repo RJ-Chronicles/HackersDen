@@ -14,8 +14,10 @@ import Login from "./components/auth/Login";
 import Homepage from "./components/Homepage";
 import DoctorDashboard from "./components/Dashboards/DoctorDashboard";
 import PatientDashboard from "./components/Dashboards/PatientDashboard";
+import DailyData from "./components/Dashboards/Patient/DailyData";
+import GraphData from "./components/Dashboards/Patient/GraphData";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 
 function App() {
   const [newName, setNewName] = useState("");
@@ -55,7 +57,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/PatientDashboard" element={<PatientDashboard />} />
           <Route path="/DoctorDashboard" element={<DoctorDashboard />} />
-
+          <Route path="/DailyData" element={<DailyData />} />
+          <Route path="/GraphData" element={<GraphData />} />
     </Routes>
   </BrowserRouter>
   );
