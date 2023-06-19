@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 .content {
     padding: 30px 15px;
     min-height: calc(100% - 123px);
@@ -24,15 +25,17 @@
             text-align: right;
         }
         .card .card-category {
-            font-size: 22px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 1.5rem;
             font-weight: 400;
             color: black;
             margin-bottom: 0;
         }
         .card .card-title {
+            font-family: 'Kanit', sans-serif;
             margin: 0;
             color: #333;
-            font-size: 38px;
+            font-size: 3rem;
             color: #1DC7EA;
             font-weight: 1000;
         }
