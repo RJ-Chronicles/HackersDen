@@ -9,7 +9,7 @@ import {
 const GraphData = () => {
     return(
         <>
-            <Row className='banner_part_dashboard1'>
+            <Row className='banner_part_dashboard'>
 
                 <Col md="8" className='graph-map'>
                     <Card>
@@ -100,7 +100,7 @@ const GraphData = () => {
                     </Card>
                 </Col>
             </Row>
-            <Row className='banner_part_dashboard2'>
+            <Row className='banner_part_dashboard'>
                 <Col md="12" className='graph-map'>
                     <Card>
                     <Card.Header>
